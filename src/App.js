@@ -9,7 +9,8 @@ Amplify.configure(aws_exports);
 
 class App extends Component {
   render() {
-    console.log(Auth.user.attributes.email)
+
+    console.log(Auth.user.attributes)
     return (
       <div className="App">
         <AmplifySignOut />
