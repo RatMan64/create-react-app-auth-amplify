@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Creator from './Creator'
 import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { Auth } from 'aws-amplify';
@@ -14,12 +15,20 @@ class App extends Component {
     return (
       <div className="App">
         <AmplifySignOut />
-        <header className="App-header">
-          <p>this is a test</p>
-        </header>
+        <Creator />
+        <input type="text"/>
+        <input type="text"/>
+        <button>create random</button>
+        <button>add password</button>
+        <p>
+          <button>show all saved passwords</button>
+        </p>
+      {/*  make component that lists all passwords in database*/}
       </div>
     );
   }
 }
+
+
 
 export default withAuthenticator(App);
