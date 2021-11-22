@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// const AWS = require("aws-cli")
+
 import Creator from './Creator'
 import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
@@ -10,15 +11,23 @@ Amplify.configure(aws_exports);
 
 class App extends Component {
   render() {
+    var ValueInP =""
 
     console.log(Auth.user.attributes)
+    function GetRandP(){
+      console.log("this button was pushed" )
+      var randpassword = "this sucks"
+      ValueInP = randpassword
+    }
+
     return (
       <div className="App">
         <AmplifySignOut />
         <Creator />
         <input type="text"/>
-        <input type="text"/>
-        <button>create random</button>
+        <input name="password" onChange={ValueInP} value={ValueInP} type="text"/>
+
+        <button onClick={GetRandP}>create random</button>
         <button>add password</button>
         <p>
           <button>show all saved passwords</button>
