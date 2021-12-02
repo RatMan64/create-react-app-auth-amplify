@@ -1,26 +1,38 @@
-import React, { Component } from 'react';
+import React, {Component, useEffect} from 'react';
 // const AWS = require("aws-cli")
 
 import Creator from './Creator'
 import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { Auth } from 'aws-amplify';
-import Amplify from 'aws-amplify';
+import Amplify, {API} from 'aws-amplify';
 import aws_exports from './aws-exports';
 import Myswitch from "./controlledswitch";
 Amplify.configure(aws_exports);
 
+
+
+
 class App extends Component{
+
+
+
     constructor() {
         super();
 
         this.usenum = React.createRef()
         this.GetRandP = this.GetRandP.bind(this)
 
+
     }
 
 
+
+
+
+
     GetRandP=()=>{
+
         const nums = "0123456789"
         const lower ="abcdefghijklmnopqrstuvwxyz"
         const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -37,9 +49,14 @@ class App extends Component{
         }
         console.log(randpassword)
     }
+
+
+
+
     render() {
 
-    // console.log(Auth.user.attributes)
+
+        // console.log(Auth.user.attributes)
 
 
     return (
@@ -49,7 +66,7 @@ class App extends Component{
         <input type="text"/>
         <input name="password"  type="text"/>
 
-        <button onClick={this.GetRandP}>create random</button>
+        <button onClick={this.ApiTest}>create random</button>
         <button >add password</button>
           <Myswitch ref={this.usenum}/>
         <p>
