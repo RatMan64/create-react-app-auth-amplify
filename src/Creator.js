@@ -5,6 +5,7 @@ import {API, Auth} from "aws-amplify";
 export default function Creator(){
 
 
+
     const [id, setid] = React.useState('')
     const [userid, setuser] = React.useState('')
     const [site, setsite] = React.useState('')
@@ -17,6 +18,8 @@ export default function Creator(){
         e.preventDefault()
         API.post('cs453api5','/passwords',{
                 body:{
+                    id:"test",
+                    user:"test",
                     site:site,
                     password:password
                 }
