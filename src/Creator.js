@@ -11,23 +11,17 @@ export default function Creator(){
     const [password, setpassword] = React.useState('')
     const [sites, setsitepassword] = React.useState([])
     useEffect(() =>{
-        API.get('apic3598aef','/items/id').then((dbres) => console.log(dbres));},[])
+        API.get('cs453api5','/passwords/id').then((dbres) => console.log(dbres));},[])
 
     const handlesubmit = e =>{
-        setid(toString(Object))
-        setuser(Auth.user.sub)
         e.preventDefault()
-        API.post('apic3598aef', '/items',{
+        API.post('cs453api5','/passwords',{
                 body:{
-                    id:id,
-                    user:userid,
                     site:site,
                     password:password
                 }
         }
-
-        )
-    }
+        )}
   return (
       <div>
         <h1>test from creator</h1>
