@@ -63,21 +63,22 @@ class App extends Component{
       <div className="App">
         <AmplifySignOut />
         <Creator />
-        <input type="text"/>
-        <input name="password"  type="text"/>
 
-        <button onClick={this.ApiTest}>create random</button>
-        <button >add password</button>
-          <Myswitch ref={this.usenum}/>
-        <p>
-          <button>show all saved passwords</button>
-        </p>
       {/*  make component that lists all passwords in database*/}
       </div>
     );
   }
 }
 
+// <input type="text"/>
+// <input name="password"  type="text"/>
+//
+// <button onClick={this.ApiTest}>create random</button>
+// <button >add password</button>
+// <Myswitch ref={this.usenum}/>
+// <p>
+//   <button>show all saved passwords</button>
+// </p>
 
 
 
