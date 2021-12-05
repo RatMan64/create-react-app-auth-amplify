@@ -27,6 +27,10 @@ export default function Creator(){
           }
         })
     }
+
+    const handleDelete = (item) => {
+        console.log(item)
+    }
   return (
       <div>
 
@@ -35,9 +39,13 @@ export default function Creator(){
             <input value={password} placeholder="ex.55#aCbobnotDead" onChange={(e) => setpassword(e.target.value)}/>
             <button> add password to vault</button>
           </form>
-          <ul>
-            {sites.map(entry => <li>{entry.site}{entry.password}</li>)}
-          </ul>
+          <table >
+              {sites.map(entry =>
+                  <tr>
+                      <td>{entry.site}</td><td>{entry.password}</td><button onClick={() => handleDelete(entry)}>delete</button>
+                  </tr>
+              )}
+          </table>
 
       </div>
   )

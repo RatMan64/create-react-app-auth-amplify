@@ -17,7 +17,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+table, th, td {
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+}
 .App-link {
   color: #61dafb;
 }
