@@ -8,37 +8,36 @@ export default function Creator(){
 
     const [id, setid] = React.useState('')
     const [userid, setuser] = React.useState('')
-    const [site, setsite] = React.useState('')
+    const [website, setwebsite] = React.useState('')
     const [password, setpassword] = React.useState('')
     const [sites, setsitepassword] = React.useState([])
     useEffect(() =>{
-        API.get('cs453api5','/passwords/id').then((dbres) => setsitepassword([...sites, ...dbres]) );},[])
+        API.get('cs453api5','/passwords/id').then((dbres) =>
+        setsitepassword([...sites, ...dbres]));},[])
 
 
     const handlesubmit = e =>{
         e.preventDefault()
+
         API.post('cs453api5','/passwords',{
           body:{
             id:v4(),
-            site:site,
+            site:website,
             password:password
           }
-        }).then(fetchedsites =>{
-          setsitepassword([...sites, ...fetchedsites])
         })
     }
   return (
       <div>
 
           <form onSubmit={handlesubmit}>
-              <input value={site} placeholder="ex. amazon, bliz.net, steam" onChange={(e) => setsite(e.target.value)}/>
-              <input value={password} placeholder="ex.55#aCbobnotDead" onChange={(e) => setpassword(e.target.value)}/>
-              <button> add password to vault</button>
+            <input value={website} placeholder="ex. amazon, bliz.net, steam" onChange={(e) => setwebsite(e.target.value)}/>
+            <input value={password} placeholder="ex.55#aCbobnotDead" onChange={(e) => setpassword(e.target.value)}/>
+            <button> add password to vault</button>
           </form>
-        <ul>
-          {sites.map(site => <li>{site.site}{site.password}</li>)}
-        </ul>
-        <button>random password</button>
+          <ul>
+            {sites.map(entry => <li>{entry.site}{entry.password}</li>)}
+          </ul>
 
       </div>
   )
