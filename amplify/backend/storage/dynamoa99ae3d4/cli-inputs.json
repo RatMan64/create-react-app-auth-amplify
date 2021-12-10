@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamoa99ae3d4",
+  "tableName": "vault",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
